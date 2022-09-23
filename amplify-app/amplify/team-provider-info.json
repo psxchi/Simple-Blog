@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-simpleblog-staging-182042-authRole",
+      "UnauthRoleArn": "arn:aws:iam::050617668606:role/amplify-simpleblog-staging-182042-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::050617668606:role/amplify-simpleblog-staging-182042-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-simpleblog-staging-182042-deployment",
+      "UnauthRoleName": "amplify-simpleblog-staging-182042-unauthRole",
+      "StackName": "amplify-simpleblog-staging-182042",
+      "StackId": "arn:aws:cloudformation:eu-central-1:050617668606:stack/amplify-simpleblog-staging-182042/6f2c89d0-3b6c-11ed-a805-026d4bea47f6",
+      "AmplifyAppId": "d3ogwbcb4qvnvl"
+    },
+    "categories": {
+      "auth": {
+        "Simpleblog": {}
+      }
+    }
+  }
+}
