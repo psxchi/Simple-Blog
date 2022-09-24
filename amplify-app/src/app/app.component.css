@@ -1,0 +1,25 @@
+div {
+    color: #eeeeee;
+    font-weight: bold;
+    font-size: 40px;
+    display: inline;
+    padding-left: 0px;
+    display: flex;
+    padding-top: 6px;
+    padding-left: 6px;
+    justify-content: space-between;
+}
+
+#TopBar {
+    height: 70px;
+    background-color: #303030;
+}
+
+
+#LoginButton {
+    background-color: #2cf8f8;
+    border-radius: 20px;
+    height: 50px;
+    width: 100px;
+    margin-right: 10px;
+}

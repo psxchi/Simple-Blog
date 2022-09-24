@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { PostComponent } from './ui-components/post/post.component';
 import { CommentComponent } from './ui-components/comment/comment.component';
 import { EditRemoveDropdownComponent } from './ui-components/edit-remove-dropdown/edit-remove-dropdown.component';
+import { HomepageComponent } from './pages/homepage/homepage.component';
+import { LoginpageComponent } from './pages/loginpage/loginpage.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +15,8 @@ import { EditRemoveDropdownComponent } from './ui-components/edit-remove-dropdow
     PostComponent,
     CommentComponent,
     EditRemoveDropdownComponent,
+    HomepageComponent,
+    LoginpageComponent,
   ],
   imports: [
     BrowserModule,

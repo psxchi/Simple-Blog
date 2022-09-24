@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DataStore } from '@aws-amplify/datastore';
-import { User, Post, Comment } from '../models';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +8,8 @@ import { User, Post, Comment } from '../models';
 
 export class AppComponent implements OnInit {
   title = 'myamplifyapp';
+  topBarButtonText = 'Login';
+
   async ngOnInit() {
   }
 }
