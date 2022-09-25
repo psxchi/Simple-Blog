@@ -1,1 +1,19 @@
-<p>loginpage works!</p>
+<div class="center">
+    <main class="form-signin">
+        <form>
+          <h1 class="sign-in">Sign in</h1>
+      
+          <div class="form-floating">
+            <input type="email" [(ngModel)]="email" name="email" class="form-control" id="floating floatingInput" placeholder="name@example.com">
+            <label class ="form-control-label" for="floatingInput">Email address</label>
+        </div>
+          <div class="form-floating">
+            <input type="password" [(ngModel)]="password" name="password" class="form-control" id="floating floatingPassword" placeholder="Password">
+            <label class ="form-control-label" for="floatingPassword">Password</label>
+          </div>
+          <button class="sign-in-button" type="submit" (click)="userLogin()">Sign in</button>
+        </form>
+      </main>
+</div>
+
+

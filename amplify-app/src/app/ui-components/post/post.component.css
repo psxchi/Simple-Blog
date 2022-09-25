@@ -12,7 +12,7 @@ div {
 }
 
 
-#MainFrame {
+.MainFrame {
     position: relative;
     background-color: #303030;
     margin: 20px;
@@ -21,13 +21,13 @@ div {
     width: 650px;
 }
 
-#Title {
+.Title {
     font-weight: bold;
     font-size: 24px;
     padding: 12px;
 }
 
-#TopBar {
+.TopBar {
     display: flex;
     justify-content: space-between;
     background-color: #202020;
@@ -35,24 +35,24 @@ div {
     width: 650px;
 }
 
-#Content {
+.Content {
     margin: 10px;
 }
 
-#Options {
+.Options {
     text-decoration: none;
     font-weight: bold;
     padding: 10px;
     font-size: 20px;
 }
 
-#Options:hover {
+.Options:hover {
     background-color: #404040;
 }
 
-#ShowComments {
+.ShowComments {
    position: absolute;
-   bottom: 0;
+   top: 260px;
    padding-top: 10px;
    width: 100%;
    height: 30px;
@@ -61,6 +61,15 @@ div {
    text-align: center;
 }
 
-#ShowComments:hover {
+.ShowComments:hover {
     background: #404040;
+}
+
+
+.comments {
+    position: absolute;
+    bottom: 0;
+    padding-top: 10px;
+    width: 100%;
+    background: #202020;
 }

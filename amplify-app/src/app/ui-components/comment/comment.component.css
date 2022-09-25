@@ -1,17 +1,17 @@
-#MainFrame {
+.MainFrame {
     background-color: #303030;
     height: 150px;
     width: 650px;
 }
 
-#Username {
+.Username {
     color: #eeeeee;
     font-weight: bold;
     font-size: 24px;
     margin-top: 22px;
 }
 
-#TopBar {
+.TopBar {
     display: flex;
     justify-content: space-between;
     background-color: #202020;
@@ -19,12 +19,12 @@
     width: 650px;
 }
 
-#Content {
+.Content {
     color: #eeeeee;
     margin: 10px;
 }
 
-#ArrowUp {
+.ArrowUp {
     color: #eeeeee;
     margin-top: 20px;
     margin-left: 25px;
@@ -35,11 +35,11 @@
     transform: rotate(-90deg);
 }
 
-#ArrowUp:hover {
+.ArrowUp:hover {
     color: orange;
 }
 
-#Options {
+.Options {
     color: #eeeeee;
     text-decoration: none;
     font-weight: bold;
@@ -47,6 +47,6 @@
     font-size: 20px;
 }
 
-#Options:hover {
+.Options:hover {
     background-color: #404040;
 }

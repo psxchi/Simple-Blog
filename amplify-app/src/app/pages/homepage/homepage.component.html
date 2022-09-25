@@ -1,4 +1,8 @@
-<div>
-    <app-post *ngFor="let blogPost of blogPosts | async" [post]="blogPost">
-    </app-post>
+<!--{{ blogPosts | json }}-->
+
+<div class="page">
+    <div class="posts">
+        <app-post *ngFor="let blogPost of blogPosts" [post]="blogPost">
+        </app-post>
+    </div>
 </div>

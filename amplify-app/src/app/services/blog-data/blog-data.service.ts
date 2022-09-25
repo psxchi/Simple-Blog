@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { DataStore } from '@aws-amplify/datastore';
-import { Post, Comment, User, Upvote } from '../../models';
+import { Post, Comment, User, Upvote } from '../../../models';
 
 @Injectable({
   providedIn: 'root'
@@ -60,8 +60,9 @@ export class BlogDataService {
   );
   }
 
-  async getComments() {
-    return await DataStore.query(Comment);
+  async getComments(post:Post) {
+    const comments = await DataStore.query(Comment);
+    return comments.filter((value) => value.postID == post.id);
   }
 
   async updateComment(comment: Comment, content: string) {
