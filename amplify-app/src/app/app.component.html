@@ -4,19 +4,14 @@
             {{ title }}
         </div>
     </a>
-    <div id="spacer"></div>
     <div>
-        <a routerLink="/login">
-            <button class="button">
-                Login
-            </button>
-        </a>
+        <button class="button" (click)="loginout()">
+            {{ loginButtonText }}
+        </button>
 
-        <a routerLink="/register">
-            <button class="button register">
-                Register
-            </button>
-        </a>
+        <button *ngIf="!isLoggedin" class="button register" (click)="register()">
+            Register
+        </button>
     </div>
 </div>
 

@@ -1,5 +1,7 @@
 <!--{{ blogPosts | json }}-->
 
+<app-create-post *ngIf="isUserLoggedin()"></app-create-post>
+
 <div class="page">
     <div class="posts">
         <app-post *ngFor="let blogPost of blogPosts" [post]="blogPost">

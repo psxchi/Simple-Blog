@@ -1,7 +1,9 @@
 <div class="MainFrame">
     <div class="TopBar">
         <div class="ArrowUp"></div>
-        <div class="Username">{{ comment.userID }}</div>
+        <div class="ArrowDown"></div>
+        <div class="upvotes">{{ upvotes }}</div>
+        <div class="Username">{{ comment.userID.substring(0, 8) }}</div>
         <div class="Options">. . .</div>
     </div>
     <div class="Content">{{ comment.content }}</div>

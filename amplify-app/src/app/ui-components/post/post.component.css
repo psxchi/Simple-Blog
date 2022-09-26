@@ -73,3 +73,24 @@ div {
     width: 100%;
     background: #202020;
 }
+
+.optionDropdown {
+    position: absolute;
+    top: 50px;
+    right: 0;
+}
+
+.openCommentButton {
+    position: absolute;
+    top: 260px;
+    padding-top: 10px;
+    width: 100;
+    right: 10px;
+    height: 30px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.openCommentButton:hover {
+    color: green;
+}

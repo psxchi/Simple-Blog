@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { BlogDataService } from 'src/app/services/blog-data/blog-data.service';
 import { Comment } from 'src/models/index';
 
 @Component({
@@ -7,11 +8,16 @@ import { Comment } from 'src/models/index';
   styleUrls: ['./comment.component.css']
 })
 export class CommentComponent implements OnInit {
+  username:string = '';
+  upvotes: number = 0;
 
   @Input()
   comment!: Comment;
 
-  constructor() { }
+  constructor() {
+  }
+
+
 
   ngOnInit(): void {
   }

@@ -4,32 +4,31 @@ import { LoginService } from 'src/app/services/login/login.service';
 import { Post } from 'src/models';
 
 @Component({
-  selector: 'app-edit-remove-dropdown',
-  templateUrl: './edit-remove-dropdown.component.html',
-  styleUrls: ['./edit-remove-dropdown.component.css']
+  selector: 'app-editpost',
+  templateUrl: './editpost.component.html',
+  styleUrls: ['./editpost.component.css']
 })
-export class EditRemoveDropdownComponent implements OnInit {
-  isEditPostEnabled: boolean = false;
+export class EditpostComponent implements OnInit {
+  title:string | undefined;
+  content:string | undefined;
 
   @Input()
-  post!:Post;
+  post!:Post
 
   constructor(private loginService:LoginService, private blogDataService:BlogDataService) { }
 
-  editPostEnabled() {
-    this.isEditPostEnabled = !this.isEditPostEnabled;
-  }
-
-  removePost() {
+  updateBlogPost() {
     const user = this.loginService.getUser();
 
     // username is the ID...
     if (!user || this.post.userID != user.username) {
-      console.log('you are not the post owner');
+      console.log('You are not the post owner');
       return;
     }
 
-    this.blogDataService.deletePost(this.post);
+    const title = this.title ?? this.post.title!;
+    const content = this.content ?? this.post.content!;
+    this.blogDataService.updatePost(this.post, title, content);
   }
 
   ngOnInit(): void {

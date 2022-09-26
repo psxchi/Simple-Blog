@@ -13,12 +13,12 @@ export class BlogDataService {
   /////////////////
   // START POSTS //
   /////////////////
-  async createPost(title: string, content: string, user: User) {
+  async createPost(title: string, content: string, userID: string) {
     await DataStore.save(
       new Post({
       "title": title,
       "content": content,
-      "userID": user.id,
+      "userID": userID,
       "Comments": []
     })
   );
@@ -38,8 +38,10 @@ export class BlogDataService {
     }));
   }
 
-  async removePost(post: Post) {
-    await DataStore.query(Post, post.id);
+  async deletePost(post: Post) {
+    const postToDelete = await DataStore.query(Post, post.id);
+    if (!postToDelete) return;
+    DataStore.delete(postToDelete);
   }
   ///////////////
   // END POSTS //
@@ -49,13 +51,13 @@ export class BlogDataService {
   ////////////////////
   // START COMMENTS //
   ////////////////////
-  async createComment(content: string, user: User, post: Post) {
+  async createComment(content: string, userID:string, postID:string) {
     await DataStore.save(
       new Comment({
       "content": content,
-      "postID": post.id,
+      "postID": postID,
       "Upvote": [],
-      "userID": user.id,
+      "userID": userID,
     })
   );
   }
@@ -139,5 +141,4 @@ export class BlogDataService {
   /////////////////
   // END UPVOTES //
   /////////////////
-
 }

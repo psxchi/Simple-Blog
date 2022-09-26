@@ -3,10 +3,16 @@
         <div class="Title">
             {{ post.title }}
         </div>
-        <div class="Options">. . .</div>
+        <div class="Options" *ngIf="isPostOwner" (click)="showOptions()">. . .</div>
+        <app-edit-remove-dropdown *ngIf="isOptionVisible" class="optionDropdown" [post]="post"></app-edit-remove-dropdown>
     </div>
     <div class="Content">{{ post.content }}</div>
+    
     <div class="ShowComments" (click)="showComments()">Show Comments</div>
+    <div class="openCommentButton" *ngIf="isUserLoggedin()" (click)="openCommentTab()">+ comment</div>
+
+    <app-create-comment *ngIf="isCommentTabOpen" [post]="post"></app-create-comment>
+
     <div class="comments" *ngIf="isCommentVisible">
         <app-comment *ngFor="let comment of comments" [comment]="comment"></app-comment>
     </div>

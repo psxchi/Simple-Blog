@@ -1,0 +1,11 @@
+<div class="CreatePost">
+    <div>
+        <input class="Title" type="title" [(ngModel)]="title" name="title" placeholder="title">
+    </div>
+
+    <form>
+      <textarea id="Content" [(ngModel)]="content" name="content" rows="12" cols="80" placeholder="Share the content you possess..."></textarea>
+    </form>
+
+    <input type="submit" value="Post Blog!" class="Submit" (click)="createBlogPost()">
+</div>

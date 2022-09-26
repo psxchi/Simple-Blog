@@ -11,23 +11,10 @@ export class RegisterpageComponent implements OnInit {
   username: string = '';
   password: string = '';
 
-  constructor(private router: Router, private registerService:RegisterService) { }
+  constructor(private registerService:RegisterService) { }
 
-  async userLogin() { 
-    this.registerService.registerUser(this.username, this.password);
-    console.log('user:');
-    
-    /*
-    try {
-      const user = await Auth.signIn(this.email, this.password);
-      console.log(user);
-      if (user) {
-
-        this.router.navigate(['/']);
-      }
-    } catch (error) {
-        console.log('error signing in', error);
-    }*/
+  async userRegister() { 
+    this.registerService.registerAndLoginUser(this.username, this.password);
   }
 
   ngOnInit(): void {

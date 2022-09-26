@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataStore } from 'aws-amplify';
 import { BlogDataService } from 'src/app/services/blog-data/blog-data.service';
+import { LoginService } from 'src/app/services/login/login.service';
 import { Post, Comment } from 'src/models/index';
 
 @Component({
@@ -10,11 +13,39 @@ import { Post, Comment } from 'src/models/index';
 export class PostComponent implements OnInit {
   comments!: Comment[];
   isCommentVisible: boolean = false;
+  isOptionVisible: boolean = false;
+  isPostOwner: boolean = false;
+  isCommentTabOpen: boolean = false;
 
   @Input()
   post!: Post;
 
-  constructor(private blogDataService: BlogDataService) {}
+  constructor(private loginService:LoginService, private blogDataService: BlogDataService, private router:Router) {
+    DataStore.observe(this.post).subscribe(() => { this.router.navigate(['/']); });
+  }
+
+  isUserLoggedin() {
+    return this.loginService.getUser() !== undefined;
+  } 
+
+  openCommentTab() {
+    console.log('ye it open')
+    this.isCommentTabOpen = !this.isCommentTabOpen;
+  }
+
+  async getPostOwner() {
+    if (!this.post) return;
+
+    const user = this.loginService.getUser();
+    if (!user) return
+    if (user.username != this.post.userID) return;
+
+    this.isPostOwner = true;
+  }
+
+  showOptions() {
+    this.isOptionVisible = !this.isOptionVisible;
+  }
 
   async showComments() {
     if (!this.comments) {
@@ -33,13 +64,17 @@ export class PostComponent implements OnInit {
   }
 
   expandIfCommentsVisible() {
-    if (!this.isCommentVisible) return {}
+    if (!this.isCommentVisible || !this.comments) return {}
 
     return {
-      'height': `${this.comments.length * 100 + 410}px`
+      'height': `${this.comments.length * 155 + 300}px`
     }
   }
   
   ngOnInit(): void {
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.router.onSameUrlNavigation = 'reload';
+    
+    this.getPostOwner();
   }
 }

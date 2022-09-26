@@ -1,0 +1,22 @@
+.CreatePost {
+    position: absolute;
+    justify-content: center;
+    background-color: #202020;
+    left: 200px;
+    height: 100px;
+    width: 400px;
+    margin: 50px;
+}
+
+.Content {
+    position: relative;
+    left: 5px;
+    top: 2px;
+}
+
+.Submit {
+    position: absolute;
+    height: 30px;
+    width: 100px;
+    left: 40%;
+}

@@ -6,6 +6,8 @@
 
 .Username {
     color: #eeeeee;
+    position: absolute;
+    left: 100px;
     font-weight: bold;
     font-size: 24px;
     margin-top: 22px;
@@ -13,7 +15,6 @@
 
 .TopBar {
     display: flex;
-    justify-content: space-between;
     background-color: #202020;
     height: 70px;
     width: 650px;
@@ -26,8 +27,8 @@
 
 .ArrowUp {
     color: #eeeeee;
-    margin-top: 20px;
-    margin-left: 25px;
+    position: absolute;
+    left: 20px;
     height: 0; 
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
@@ -39,12 +40,37 @@
     color: orange;
 }
 
+.ArrowDown {
+    color: #eeeeee;
+    position: relative;
+    left: 20px;
+    top: 40px;
+    height: 0; 
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid;
+    transform: rotate(90deg);
+}
+
+.ArrowDown:hover {
+    color: orange;
+}
+
+.upvotes {
+    position: relative;
+    top: 20px;
+    width: 30px;
+    text-align: center;
+}
+
 .Options {
     color: #eeeeee;
+    position: absolute;
     text-decoration: none;
     font-weight: bold;
     padding: 20px;
     font-size: 20px;
+    right: 0px;
 }
 
 .Options:hover {

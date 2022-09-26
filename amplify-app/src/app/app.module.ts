@@ -10,6 +10,9 @@ import { EditRemoveDropdownComponent } from './ui-components/edit-remove-dropdow
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { LoginpageComponent } from './pages/loginpage/loginpage.component';
 import { RegisterpageComponent } from './pages/registerpage/registerpage.component';
+import { CreatePostComponent } from './ui-components/create-post/create-post/create-post.component';
+import { EditpostComponent } from './ui-components/edit-post/editpost/editpost.component';
+import { CreateCommentComponent } from './ui-components/create-comment/create-comment/create-comment.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,9 @@ import { RegisterpageComponent } from './pages/registerpage/registerpage.compone
     HomepageComponent,
     LoginpageComponent,
     RegisterpageComponent,
+    CreatePostComponent,
+    EditpostComponent,
+    CreateCommentComponent,
   ],
   imports: [
     BrowserModule,

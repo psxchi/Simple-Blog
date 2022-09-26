@@ -8,7 +8,7 @@ import { CognitoUser } from 'src/models/cognito-user';
   providedIn: 'root'
 })
 export class LoginService {
-  user:string = '';
+  user:CognitoUser | undefined;
 
   constructor(private router:Router) { }
 
@@ -21,17 +21,7 @@ export class LoginService {
       const user = await Auth.signIn(email, password);
 
       if (user) {
-        this.user = user.Session;
-        /*
-        this.user = new CognitoUser({
-          "session": user.session,
-          "challengeName": user.challengeName,
-          "challengeParam": user.challengeParam,
-          "client": user.client,
-          "pool": user.pool,
-          "userDataKey": user.userDataKey,
-          "username": user.username
-      });*/
+        this.user = user;
         this.router.navigate(['/']);
       }
 
@@ -39,4 +29,14 @@ export class LoginService {
         console.log('error signing in', error);
     }
   }
+
+  async signOutUser() {
+    try {
+      await Auth.signOut();
+      this.user = undefined;
+    } catch (error) {
+        console.log('error signing out: ', error);
+    }
+  }
+
 }

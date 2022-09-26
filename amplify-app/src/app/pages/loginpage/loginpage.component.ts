@@ -14,23 +14,10 @@ export class LoginpageComponent implements OnInit {
   email: string = '';
   password: string = '';
 
-  constructor(private router: Router, private loginService:LoginService) { }
+  constructor(private loginService:LoginService) { }
 
   async userLogin() { 
     this.loginService.signInUser(this.email, this.password);
-    console.log('user:');
-    
-    /*
-    try {
-      const user = await Auth.signIn(this.email, this.password);
-      console.log(user);
-      if (user) {
-
-        this.router.navigate(['/']);
-      }
-    } catch (error) {
-        console.log('error signing in', error);
-    }*/
   }
 
   ngOnInit(): void {
