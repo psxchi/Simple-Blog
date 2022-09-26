@@ -1,17 +1,22 @@
-<div id="TopBar">
+<div class="TopBar">
     <a routerLink="/">
         <div>
-            Simple Blog
+            {{ title }}
         </div>
     </a>
     <div id="spacer"></div>
     <div>
         <a routerLink="/login">
-            <button id="LoginButton">
-                {{ topBarButtonText }}
+            <button class="button">
+                Login
             </button>
         </a>
-        
+
+        <a routerLink="/register">
+            <button class="button register">
+                Register
+            </button>
+        </a>
     </div>
 </div>
 

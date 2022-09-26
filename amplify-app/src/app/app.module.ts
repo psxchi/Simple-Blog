@@ -9,6 +9,7 @@ import { CommentComponent } from './ui-components/comment/comment.component';
 import { EditRemoveDropdownComponent } from './ui-components/edit-remove-dropdown/edit-remove-dropdown.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { LoginpageComponent } from './pages/loginpage/loginpage.component';
+import { RegisterpageComponent } from './pages/registerpage/registerpage.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { LoginpageComponent } from './pages/loginpage/loginpage.component';
     EditRemoveDropdownComponent,
     HomepageComponent,
     LoginpageComponent,
+    RegisterpageComponent,
   ],
   imports: [
     BrowserModule,

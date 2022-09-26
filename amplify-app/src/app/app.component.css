@@ -14,16 +14,21 @@ div {
     justify-content: space-between;
 }
 
-#TopBar {
+.TopBar {
     height: 70px;
     background-color: #303030;
 }
 
 
-#LoginButton {
-    background-color: #2cf8f8;
+.button {
+    background-color: #202020;
+    color: #eeeeee;
     border-radius: 20px;
     height: 50px;
     width: 100px;
     margin-right: 10px;
+}
+
+.register {
+    background-color: #404040;
 }

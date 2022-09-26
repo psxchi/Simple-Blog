@@ -1,0 +1,58 @@
+label {
+    color: #303030;
+}
+
+.sign-in {
+    padding: 20px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.form-signin {
+  padding: 70px;
+}
+
+.form-floating {
+    position: relative;
+    min-height: 3.5em;
+}
+
+input.form-control {
+    height: 3em;
+    position: absolute;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+#floating {
+    height: 40px;
+    border-radius: 5px 5px 5px 5px;
+    padding: 5px;
+}
+
+label.form-control-label {
+    position: absolute;
+    font-size: .8em;
+    top: 2px;
+    left: 5px;
+    text-transform: uppercase;
+}
+
+.sign-in-button {
+    height: 35px;
+    width: 100px;
+    margin: 35px;
+}
