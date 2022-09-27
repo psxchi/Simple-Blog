@@ -4,9 +4,6 @@ frontend:
     preBuild:
       commands:
         - cd amplify-app
-    build:
-      commands:
-        - npm run start
   artifacts:
 
     baseDirectory: /
