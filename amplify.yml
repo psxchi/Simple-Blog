@@ -1,4 +1,9 @@
 version: 1
+backend:
+  phases:
+    build:
+      commands:
+        -amplifyPush --simple
 frontend:
   phases:
     preBuild:
@@ -9,9 +14,9 @@ frontend:
         commands:
           - npm run build
   artifacts:
-    baseDirectory: ./amplify-app/src
+    baseDirectory: amplify-app/src
     files:
       - '**/*'
   cache:
     paths:
-      - node_modules/**/*
+      - amplify-app/node_modules/**/*
