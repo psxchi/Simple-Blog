@@ -3,12 +3,15 @@ frontend:
   phases:
     preBuild:
       commands:
-        - ls
         - cd amplify-app
+        - npm ci
+      build:
+        commands:
+          - npm run build
   artifacts:
-
-    baseDirectory: amplify-app
+    baseDirectory: amplify-app/src
     files:
       - '**/*'
   cache:
-    paths: []
+    paths:
+      - node_modules/**/*
