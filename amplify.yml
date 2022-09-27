@@ -1,0 +1,13 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - cd amplify-app
+  artifacts:
+
+    baseDirectory: /
+    files:
+      - '**/*'
+  cache:
+    paths: []
