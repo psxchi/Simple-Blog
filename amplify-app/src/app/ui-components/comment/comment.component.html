@@ -4,7 +4,8 @@
         <div class="ArrowDown"></div>
         <div class="upvotes">{{ upvotes }}</div>
         <div class="Username">{{ comment.userID.substring(0, 8) }}</div>
-        <div class="Options">. . .</div>
+        <div class="Options" *ngIf="isCommentOwner()" (click)="showOptions()">. . .</div>
+        <app-edit-remove-comment-dropdown *ngIf="isOptionsVisible" class="optionDropdown" [comment]="comment"></app-edit-remove-comment-dropdown>
     </div>
     <div class="Content">{{ comment.content }}</div>
 </div>

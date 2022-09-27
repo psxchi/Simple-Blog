@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { BlogDataService } from 'src/app/services/blog-data/blog-data.service';
 import { LoginService } from 'src/app/services/login/login.service';
-import { Post } from 'src/models';
+import { Post, Comment } from 'src/models';
 
 @Component({
   selector: 'app-editpost',
@@ -13,7 +13,7 @@ export class EditpostComponent implements OnInit {
   content:string | undefined;
 
   @Input()
-  post!:Post
+  post!:Post;
 
   constructor(private loginService:LoginService, private blogDataService:BlogDataService) { }
 

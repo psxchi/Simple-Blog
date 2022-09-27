@@ -66,9 +66,7 @@ export class PostComponent implements OnInit {
   expandIfCommentsVisible() {
     if (!this.isCommentVisible || !this.comments) return {}
 
-    return {
-      'height': `${this.comments.length * 155 + 300}px`
-    }
+    return { 'height': `${(this.comments.length-1) * 155 + 455}px` }
   }
   
   ngOnInit(): void {

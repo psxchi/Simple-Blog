@@ -1,0 +1,5 @@
+<div class="MainFrame">
+    <div class="Option" (click)="editEnabled()">Edit</div>
+    <app-editcomment *ngIf="isEditCommentEnabled" [comment]="comment"></app-editcomment>
+    <div class="Option" (click)="removeComment()">Remove</div>
+</div>

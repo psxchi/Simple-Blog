@@ -1,0 +1,22 @@
+div {
+    color: #eeeeee;
+    font-size: 24px;
+}
+
+.MainFrame {
+    position: absolute;
+    border-radius: 10px;
+    background-color: #303030;
+    height: 135px;
+    width: 200px;
+}
+
+
+.Option {
+    padding: 20px;
+}
+
+.Option:hover {
+    border-radius: 10px;
+    background: #2a2a2a;
+}

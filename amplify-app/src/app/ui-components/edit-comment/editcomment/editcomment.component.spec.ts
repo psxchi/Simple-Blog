@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditRemoveDropdownComponent } from './edit-remove-dropdown.component';
+import { EditcommentComponent } from './editcomment.component';
 
-describe('EditRemoveDropdownComponent', () => {
-  let component: EditRemoveDropdownComponent;
-  let fixture: ComponentFixture<EditRemoveDropdownComponent>;
+describe('EditcommentComponent', () => {
+  let component: EditcommentComponent;
+  let fixture: ComponentFixture<EditcommentComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditRemoveDropdownComponent ]
+      declarations: [ EditcommentComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EditRemoveDropdownComponent);
+    fixture = TestBed.createComponent(EditcommentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

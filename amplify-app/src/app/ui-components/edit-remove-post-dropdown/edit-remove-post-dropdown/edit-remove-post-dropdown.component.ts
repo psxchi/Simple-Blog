@@ -4,19 +4,20 @@ import { LoginService } from 'src/app/services/login/login.service';
 import { Post } from 'src/models';
 
 @Component({
-  selector: 'app-edit-remove-dropdown',
-  templateUrl: './edit-remove-dropdown.component.html',
-  styleUrls: ['./edit-remove-dropdown.component.css']
+  selector: 'app-edit-remove-post-dropdown',
+  templateUrl: './edit-remove-post-dropdown.component.html',
+  styleUrls: ['./edit-remove-post-dropdown.component.css']
 })
-export class EditRemoveDropdownComponent implements OnInit {
+export class EditRemovePostDropdownComponent implements OnInit {
   isEditPostEnabled: boolean = false;
 
   @Input()
   post!:Post;
 
+
   constructor(private loginService:LoginService, private blogDataService:BlogDataService) { }
 
-  editPostEnabled() {
+  editEnabled() {
     this.isEditPostEnabled = !this.isEditPostEnabled;
   }
 
@@ -31,7 +32,6 @@ export class EditRemoveDropdownComponent implements OnInit {
 
     this.blogDataService.deletePost(this.post);
   }
-
   ngOnInit(): void {
   }
 

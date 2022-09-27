@@ -4,7 +4,7 @@
             {{ post.title }}
         </div>
         <div class="Options" *ngIf="isPostOwner" (click)="showOptions()">. . .</div>
-        <app-edit-remove-dropdown *ngIf="isOptionVisible" class="optionDropdown" [post]="post"></app-edit-remove-dropdown>
+        <app-edit-remove-post-dropdown *ngIf="isOptionVisible" class="optionDropdown" [post]="post"></app-edit-remove-post-dropdown>
     </div>
     <div class="Content">{{ post.content }}</div>
     

@@ -1,5 +1,5 @@
 <div class="MainFrame">
-    <div class="Option" (click)="editPostEnabled()">Edit</div>
+    <div class="Option" (click)="editEnabled()">Edit</div>
     <app-editpost *ngIf="isEditPostEnabled" [post]="post"></app-editpost>
     <div class="Option" (click)="removePost()">Remove</div>
 </div>
