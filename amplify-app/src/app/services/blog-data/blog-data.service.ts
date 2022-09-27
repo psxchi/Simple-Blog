@@ -121,18 +121,29 @@ export class BlogDataService {
   ///////////////////
   // START UPVOTES //
   ///////////////////
-  async addUpvote(comment: Comment, user: User) {
+  async addUpvote(comment: Comment, userID:string) {
     await DataStore.save(
       new Upvote({
       "upvotes": 1,
       "commentID": comment.id,
-      "userID": user.id
+      "userID": userID
     })
   );
   }
 
+  async addDownvote(comment: Comment, userID:string) {
+    await DataStore.save(
+      new Upvote({
+        "upvotes": -1,
+        "commentID": comment.id,
+        "userID": userID,
+      })
+    )
+  }
+
   async getUpvotes(comment: Comment) {
-    return await DataStore.query(Upvote, comment.id);
+    const upvotes = await DataStore.query(Upvote, comment.id);
+    console.log(upvotes?.upvotes);
   }
   
   async removeUpvote(upvote:Upvote) {

@@ -16,7 +16,22 @@ export class CommentComponent implements OnInit {
   @Input()
   comment!: Comment;
 
-  constructor(private loginService:LoginService) { }
+  constructor(private loginService:LoginService, private blogDataService:BlogDataService) { }
+
+  upvoteClick() {
+    const user = this.loginService.getUser();
+    if (!user) return;
+
+    this.blogDataService.addUpvote(this.comment, user.username);
+  }
+
+  downvoteClick() {
+    const user = this.loginService.getUser();
+    if (!user) return;
+
+    this.blogDataService.addDownvote(this.comment, user.username);
+  }
+
 
   showOptions() {
     this.isOptionsVisible = !this.isOptionsVisible;
@@ -28,9 +43,8 @@ export class CommentComponent implements OnInit {
     return true;
   }
 
-
-
   ngOnInit(): void {
+    this.blogDataService.getUpvotes(this.comment);
   }
 
 }

@@ -1,7 +1,7 @@
 <div class="MainFrame">
     <div class="TopBar">
-        <div class="ArrowUp"></div>
-        <div class="ArrowDown"></div>
+        <div class="ArrowUp" (click)="upvoteClick()"></div>
+        <div class="ArrowDown" (click)="downvoteClick()"></div>
         <div class="upvotes">{{ upvotes }}</div>
         <div class="Username">{{ comment.userID.substring(0, 8) }}</div>
         <div class="Options" *ngIf="isCommentOwner()" (click)="showOptions()">. . .</div>
