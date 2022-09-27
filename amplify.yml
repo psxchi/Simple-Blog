@@ -3,10 +3,11 @@ frontend:
   phases:
     preBuild:
       commands:
+        - ls
         - cd amplify-app
   artifacts:
 
-    baseDirectory: /
+    baseDirectory: amplify-app
     files:
       - '**/*'
   cache:
