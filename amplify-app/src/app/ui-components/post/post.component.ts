@@ -16,9 +16,15 @@ export class PostComponent implements OnInit {
   isOptionVisible: boolean = false;
   isPostOwner: boolean = false;
   isCommentTabOpen: boolean = false;
+  author: string = 'author';
 
   @Input()
   post!: Post;
+
+  async getAuthor() {
+    const blogUser = await this.blogDataService.getUser(this.post.userID);
+    this.author = blogUser?.username ?? '';
+  }
 
   constructor(private loginService:LoginService, private blogDataService: BlogDataService, private router:Router) {
     DataStore.observe(this.post).subscribe(() => { this.router.navigate(['/']); });
@@ -29,16 +35,14 @@ export class PostComponent implements OnInit {
   } 
 
   openCommentTab() {
-    console.log('ye it open')
     this.isCommentTabOpen = !this.isCommentTabOpen;
   }
 
-  async getPostOwner() {
+  async postOwner() {
     if (!this.post) return;
 
     const user = this.loginService.getUser();
-    if (!user) return
-    if (user.username != this.post.userID) return;
+    if (!user || user.username != this.post.userID) return;
 
     this.isPostOwner = true;
   }
@@ -73,6 +77,7 @@ export class PostComponent implements OnInit {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     this.router.onSameUrlNavigation = 'reload';
     
-    this.getPostOwner();
+    this.postOwner();
+    this.getAuthor();
   }
 }

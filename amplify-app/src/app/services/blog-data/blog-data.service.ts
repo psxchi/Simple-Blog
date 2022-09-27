@@ -97,8 +97,8 @@ export class BlogDataService {
   );
   }
 
-  async getUsers() {
-    return await DataStore.query(User);
+  async getUser(userID:string) {
+    return await DataStore.query(User, userID);
   }
 
   async updateUser(user: User, username?: string, email?: string, password?: string) {

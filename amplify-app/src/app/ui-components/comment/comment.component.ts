@@ -23,6 +23,7 @@ export class CommentComponent implements OnInit {
     if (!user) return;
 
     this.blogDataService.addUpvote(this.comment, user.username);
+    (console.log('added upvote'))
   }
 
   downvoteClick() {
