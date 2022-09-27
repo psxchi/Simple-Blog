@@ -1,16 +1,12 @@
 version: 1
+env:
+  variables:
+    key: value
 frontend:
   phases:
-    # IMPORTANT - Please verify your build commands
     preBuild:
       commands:
         - cd amplify-app
     build:
-      commands: [ ]
-  artifacts:
-    # IMPORTANT - Please verify your build output directory
-    baseDirectory: /
-    files:
-      - '**/*'
-  cache:
-    paths: []
+      commands:
+        - ng serve
