@@ -1,0 +1,32 @@
+type Upvote @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  upvotes: Int
+  commentID: ID! @index(name: "byComment")
+  userID: ID! @index(name: "byUser")
+}
+
+type Comment @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  content: String!
+  postID: ID! @index(name: "byPost")
+  Upvote: [Upvote] @hasMany(indexName: "byComment", fields: ["id"])
+  userID: ID! @index(name: "byUser")
+}
+
+type Post @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  title: String!
+  content: String
+  userID: ID! @index(name: "byUser")
+  Comments: [Comment] @hasMany(indexName: "byPost", fields: ["id"])
+}
+
+type User @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  username: String!
+  email: String!
+  password: String!
+  Posts: [Post] @hasMany(indexName: "byUser", fields: ["id"])
+  Upvote: [Upvote] @hasMany(indexName: "byUser", fields: ["id"])
+  Comments: [Comment] @hasMany(indexName: "byUser", fields: ["id"])
+} 
