@@ -7,6 +7,3 @@ frontend:
     preBuild:
       commands:
         - cd amplify-app
-    build:
-      commands:
-        - ng serve
